@@ -1,0 +1,14 @@
+function doGet() {
+  return HtmlService.createTemplateFromFile('Index').evaluate();
+}
+ 
+
+function getData(){
+  var spreadSheetId = "1O6jr2SWAtDgJNQgG_WYCBF0iJt9exnuvtqEvGKTl2EQ";    //REPLACE WITH YOUR ID
+  var dataRange     = "Data!A2:B";
+ 
+  var range   = Sheets.Spreadsheets.Values.get(spreadSheetId, dataRange);
+  var values  = range.values;
+ 
+  return values;
+}
